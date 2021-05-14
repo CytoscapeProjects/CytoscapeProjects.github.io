@@ -27,10 +27,10 @@ var cy = cytoscape({
     .selector('edge')
       .css({
         'curve-style': 'bezier',
-        'width': 6,
+        'width': 2,
         'target-arrow-shape': 'triangle',
-        'line-color': '#ffaaaa',
-        'target-arrow-color': '#ffaaaa'
+        'line-color': 'black',
+        'target-arrow-color': 'black'
       })
 
       .selector('#grass')
@@ -137,6 +137,38 @@ var cy = cytoscape({
       .css({
         'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bear_Alaska_%283%29.jpg/220px-Bear_Alaska_%283%29.jpg'
       })
+      .selector('#bacteria')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/EscherichiaColi_NIAID.jpg/220px-EscherichiaColi_NIAID.jpg'
+      })
+      .selector('#organic_carbon')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flies_settle_on_a_sheep_carrion.jpg/220px-Flies_settle_on_a_sheep_carrion.jpg'
+      })
+      .selector('#fungi')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Fungi_collage.jpg/290px-Fungi_collage.jpg'
+      })
+      .selector('#sunlight')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/220px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg'
+      })
+      .selector('#spider')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Clynotis_severus%2C_AF_2.jpg/240px-Clynotis_severus%2C_AF_2.jpg'
+      })
+      .selector('#butterfly')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Fesoj_-_Papilio_machaon_%28by%29.jpg/220px-Fesoj_-_Papilio_machaon_%28by%29.jpg'
+      })
+      .selector('#algae')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chlorella_vulgaris_NIES2170.jpg/480px-Chlorella_vulgaris_NIES2170.jpg'
+      })
+      .selector('#snail')
+      .css({
+        'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Snail.jpg/220px-Snail.jpg'
+      })
       .selector('#zebra')
       .css({
         'background-image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Plains_Zebra_Equus_quagga.jpg/220px-Plains_Zebra_Equus_quagga.jpg'
@@ -165,15 +197,21 @@ var cy = cytoscape({
       { data: { id: 'rat' } },
       { data: { id: 'crab' } },
       { data: { id: 'fish' } },
+      { data: { id: 'spider' } },
+      { data: { id: 'butterfly' } },
       { data: { id: 'grasshopper' } },
       { data: { id: 'earthworm' } },
       { data: { id: 'bee' } },
       { data: { id: 'moth' } },
+      { data: { id: 'snail' } },
       { data: { id: 'grass' } },
       { data: { id: 'fruit' } },
       { data: { id: 'flower' } },
-
-
+      { data: { id: 'bacteria' } },
+      { data: { id: 'fungi' } },
+      { data: { id: 'algae' } },
+      { data: { id: 'organic_carbon' } },
+      { data: { id: 'sunlight' } },
 
     ],
     edges: [
@@ -202,19 +240,15 @@ var cy = cytoscape({
 
       { data: { source: 'bear', target: 'zebra' } },
       { data: { source: 'bear', target: 'deer' } },
-      { data: { source: 'bear', target: 'buffalo' } },
       { data: { source: 'bear', target: 'rabbit' } },
       { data: { source: 'bear', target: 'fox' } },
       { data: { source: 'bear', target: 'fish' } },
       { data: { source: 'bear', target: 'bird' } },
       { data: { source: 'bear', target: 'weasel' } },
-      { data: { source: 'bear', target: 'hawk' } },
       { data: { source: 'bear', target: 'fruit' } },
       { data: { source: 'bear', target: 'grass' } },
       { data: { source: 'bear', target: 'rat' } },
       { data: { source: 'bear', target: 'snake' } },
-      { data: { source: 'bear', target: 'bat' } },
-      { data: { source: 'bear', target: 'owl' } },
       { data: { source: 'bear', target: 'bee' } },
 
 
@@ -223,7 +257,6 @@ var cy = cytoscape({
       { data: { source: 'fox', target: 'rabbit' } },
       { data: { source: 'fox', target: 'grasshopper' } },
       { data: { source: 'fox', target: 'rat' } },
-      { data: { source: 'fox', target: 'earthworm' } },
       { data: { source: 'fox', target: 'crab' } },
       { data: { source: 'fox', target: 'fish' } },
       { data: { source: 'fox', target: 'bird' } },
@@ -243,6 +276,8 @@ var cy = cytoscape({
       { data: { source: 'eagle', target: 'fruit' } },
       { data: { source: 'eagle', target: 'snake' } },
       { data: { source: 'eagle', target: 'crab' } },
+      { data: { source: 'eagle', target: 'spider' } },
+      { data: { source: 'eagle', target: 'snail' } },
 
       { data: { source: 'hawk', target: 'rabbit' } },
       { data: { source: 'hawk', target: 'grasshopper' } },
@@ -257,6 +292,9 @@ var cy = cytoscape({
       { data: { source: 'hawk', target: 'fruit' } },
       { data: { source: 'hawk', target: 'snake' } },
       { data: { source: 'hawk', target: 'crab' } },
+      { data: { source: 'hawk', target: 'spider' } },
+      { data: { source: 'hawk', target: 'spider' } },
+      { data: { source: 'hawk', target: 'snail' } },
 
       { data: { source: 'owl', target: 'rabbit' } },
       { data: { source: 'owl', target: 'grasshopper' } },
@@ -271,6 +309,8 @@ var cy = cytoscape({
       { data: { source: 'owl', target: 'fruit' } },
       { data: { source: 'owl', target: 'snake' } },
       { data: { source: 'owl', target: 'crab' } },
+      { data: { source: 'owl', target: 'spider' } },
+      { data: { source: 'owl', target: 'snail' } },
 
       { data: { source: 'snake', target: 'rabbit' } },
       { data: { source: 'snake', target: 'grasshopper' } },
@@ -288,6 +328,8 @@ var cy = cytoscape({
       { data: { source: 'bat', target: 'earthworm' } },
       { data: { source: 'bat', target: 'rat' } },
       { data: { source: 'bat', target: 'fish' } },
+      { data: { source: 'bat', target: 'spider' } },
+      { data: { source: 'bat', target: 'butterfly' } },
 
 
 
@@ -315,6 +357,8 @@ var cy = cytoscape({
       { data: { source: 'weasel', target: 'fish' } },
       { data: { source: 'weasel', target: 'bird' } },
       { data: { source: 'weasel', target: 'mole' } },
+      { data: { source: 'weasel', target: 'snail' } },
+
 
       { data: { source: 'crab', target: 'grass' } },
       { data: { source: 'crab', target: 'fruit' } },
@@ -324,6 +368,7 @@ var cy = cytoscape({
       { data: { source: 'crab', target: 'moth' } },
       { data: { source: 'crab', target: 'grasshopper' } },
       { data: { source: 'crab', target: 'fish' } },
+      { data: { source: 'crab', target: 'algae' } },
 
       { data: { source: 'bird', target: 'grass' } },
       { data: { source: 'bird', target: 'fruit' } },
@@ -333,7 +378,10 @@ var cy = cytoscape({
       { data: { source: 'bird', target: 'grasshopper' } },
       { data: { source: 'bird', target: 'fish' } },
       { data: { source: 'bird', target: 'rat' } },
+      { data: { source: 'bird', target: 'spider' } },
       { data: { source: 'bird', target: 'flower' } },
+      { data: { source: 'bird', target: 'butterfly' } },
+      { data: { source: 'bird', target: 'snail' } },
 
       { data: { source: 'rabbit', target: 'grass' } },
       { data: { source: 'rabbit', target: 'fruit' } },
@@ -359,6 +407,7 @@ var cy = cytoscape({
       { data: { source: 'rat', target: 'bee' } },
       { data: { source: 'rat', target: 'grasshopper' } },
       { data: { source: 'rat', target: 'fish' } },
+      { data: { source: 'rat', target: 'snail' } },
 
       
       { data: { source: 'fish', target: 'grass' } },
@@ -367,14 +416,34 @@ var cy = cytoscape({
       { data: { source: 'fish', target: 'moth' } },
       { data: { source: 'fish', target: 'bee' } },
       { data: { source: 'fish', target: 'grasshopper' } },
-      
+      { data: { source: 'fish', target: 'algae' } },
+      { data: { source: 'fish', target: 'snail' } },
+
+      { data: { source: 'spider', target: 'grasshopper' } },
+      { data: { source: 'spider', target: 'moth' } },
+      { data: { source: 'spider', target: 'bee' } },
+      { data: { source: 'spider', target: 'butterfly' } },
+
+      { data: { source: 'snail', target: 'algae' } },
+      { data: { source: 'snail', target: 'earthworm' } },
+      { data: { source: 'snail', target: 'organic_carbon' } },
+      { data: { source: 'snail', target: 'grass' } },
+
       { data: { source: 'zebra', target: 'grass' } },
       { data: { source: 'buffalo', target: 'grass' } },
-      { data: { source: 'earthworm', target: 'grass' } },
+      { data: { source: 'butterfly', target: 'flower' } },
+      { data: { source: 'butterfly', target: 'organic_carbon' } },
+      { data: { source: 'earthworm', target: 'bacteria' } },
+      { data: { source: 'earthworm', target: 'fungi' } },
+      { data: { source: 'earthworm', target: 'organic_carbon' } },
+      { data: { source: 'earthworm', target: 'algae' } },
       { data: { source: 'grasshopper', target: 'grass' } },
       { data: { source: 'bee', target: 'flower' } },
-
-
+      { data: { source: 'bacteria', target: 'organic_carbon' } },
+      { data: { source: 'fungi', target: 'organic_carbon' } },
+      { data: { source: 'grass', target: 'sunlight' } },
+      { data: { source: 'flower', target: 'sunlight' } },
+      { data: { source: 'fruit', target: 'sunlight' } },
 
     ]
   },
@@ -384,6 +453,7 @@ var cy = cytoscape({
     directed: true,
     padding: 10
   }
+
 }); // cy init
 
 // cy.on('tap', 'node', function(){
